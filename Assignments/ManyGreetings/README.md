@@ -18,7 +18,7 @@ Write a program that asks your name and prints 'Hello \<your name\> !' on the sc
 	Name ? Tristan
 	Hello, Tristan !
 	
-Commit all the changes and create a new branch called 'extension1'. In this branch, add ask for extra input: 'How many greetings?' and make sure that the greeting is repeated a number of times. Its output should look like
+Commit all the changes and create a new branch called 'extension'. In this branch, add code to ask for extra input: 'How many greetings?' and print the number. Its output should look like
 
 	Name ? Tristan
 	How many greetings ? 3
@@ -26,7 +26,7 @@ Commit all the changes and create a new branch called 'extension1'. In this bran
 	
 While working on the extension, try switching back to the master branch. You'll see that you can still run the old version of the code, even if the extension isn't ready yet. You can only switch branches, however, once you've committed the changes!
 
-While still in the master branch, change the first question to read 'What is your name ?'.
+While back in the master branch, change the first question to read 'What is your name ?'.
 
 	What is your name ? Tristan
 	Hello, Tristan !
