@@ -8,7 +8,8 @@
 
 ### Read
 
-* [Think Python](http://www.greenteapress.com/thinkpython/) ch. 1, 2, 5, 
+* [Think Python](http://www.greenteapress.com/thinkpython/) ch. 1, 2, 8.
+* [Version Control by Example](http://ericsink.com/vcbe/) ch. 2,4,8.
 
 ### Assignment
 

@@ -9,7 +9,7 @@
 
 ### Read
 
-* [Think Python](http://www.greenteapress.com/thinkpython/) ch. 10, 14
+* [Think Python](http://www.greenteapress.com/thinkpython/) ch. 5, 10, 14
 * [Sieve of Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
 
 ### Assignment
