@@ -1,2 +1,3 @@
 name = input("What is your name ? ")
-print("Hello, %s !" % name)
+greetings = int(input("How many greetings ? "))
+print("%d x Hello, %s !" % (greetings, name))
