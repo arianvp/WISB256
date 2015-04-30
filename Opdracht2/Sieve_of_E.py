@@ -1,10 +1,10 @@
 #! /bin/env python3
 import sys
 import time
-
+import math
 def sieve(n):
     a = [False] * 2 + [True]* (n-1)
-    for i in range(int(n**0.5 + 1.5)):
+    for i in range(math.ceil(n)):
         if a[i]:
             for j in range(i*i,n+1,i):
                 a[j] = False
@@ -18,7 +18,6 @@ out = sys.argv[2]
 
 t1 = time.perf_counter()
 primes = sieve(n)
-t2 = time.perf_counter()
 
 print("--------------------------------------------")
 
@@ -28,4 +27,5 @@ with open(out,"wt") as f:
         f.write("{}\n".format(i))
         length+=1
 
+t2 = time.perf_counter()
 print("Found {} Prime numbers smaller than {} in {} sec.".format(length,n,t2-t1))
