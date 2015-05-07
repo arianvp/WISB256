@@ -2,14 +2,15 @@ import random
 import sys
 
 from math import sin, cos
+import math
 
 try:
-    s = int(sys.argv[3])
-    random.seed(s)
+    if len(sys.argv) > 3:
+        s = int(sys.argv[3])
+        random.seed(s)
     l = float(sys.argv[2])
     n = int(sys.argv[1])
 
-    assert(l <= 1)
 
     def drop_needle(l):
         x0 = random.random()
@@ -32,11 +33,21 @@ try:
         if drop_needle(l):
             hits += 1
 
+    p = float(hits) / float (n)
+    pi = 0
+    if l <= 1:
+        pi = 2 * l * (1/p)
+    if l > 1:
+        pi = 2*(l - math.sqrt(l*l-1) - math.asin(1/l)) / (p-1)
 
-    pi = 2 * l *(float(n) / float(hits))
 
+    
 
     print("{} hits in {} tries".format(hits,n))
     print("Pi = {}".format(pi))
 except:
+    raise
     print("Use: estimate_py N L S")
+
+
+
