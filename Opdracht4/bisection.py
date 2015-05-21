@@ -8,7 +8,6 @@ def findRoot(f, a, b, epsilon):
     else:
         return findRoot(f,m,b,epsilon)
 
-# Take the nth derivative
 def findAllRoots(f, a, b, epsilon):
     roots = []
     r = findRoot(f,a,b,epsilon)
