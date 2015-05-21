@@ -13,7 +13,7 @@ def findAllRoots(f, a, b, epsilon):
     r = findRoot(f,a,b,epsilon)
     roots.append(r)
     while abs(r - b) > epsilon:
-        r = findRoot(f,r+0.1,b,epsilon)
+        r = findRoot(f,r+epsilon,b,epsilon)
         roots.append(r)
 
     roots.pop() # remove debris
