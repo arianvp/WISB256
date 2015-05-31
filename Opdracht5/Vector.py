@@ -61,3 +61,21 @@ class Vector:
             
         return c ** 0.5
         
+        
+def proj(u,v):
+    if u.array == array('d', len(u.array)*[0]):
+        return Vector(len(u.array),array('d', len(u.array)*[0]))
+    return u.scalar(v.inner(u) / u.inner(v))
+
+
+
+def GramSchmidt(vs):
+    xs = []
+    for i in range(len(vs)):
+        tmp = vs[i]
+        for j in xs:
+            tmp = tmp.add(proj(j,vs[i]).scalar(-1))
+        xs.append(tmp)
+        
+    return xs
+                
