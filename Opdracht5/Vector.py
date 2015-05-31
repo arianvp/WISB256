@@ -69,6 +69,13 @@ class Vector:
 def proj(u,v):
     return v.scalar(u.inner(v) / v.inner(v))
 
+def idioamaticGramSchmidt(vs):
+    ws = []
+    for v in vs:
+        u = v
+        for w in ws:
+            u = u.incomb(proj(v,w),1,-1)
+            ws.append(u.scalar(1/u.norm())
 
 
 def GramSchmidt(vs):
