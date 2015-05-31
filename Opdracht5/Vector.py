@@ -44,7 +44,11 @@ class Vector:
         
     
     def lincomb(self,other,alpha,beta):
-        return (self.scalar(alpha).add(other.scalar(beta)))
+        
+        a = self.scalar(alpha)
+        b = other.scalar(beta)
+        
+        return a.add(b)
         
     
     def inner(self,other):
@@ -63,9 +67,7 @@ class Vector:
         
         
 def proj(u,v):
-    if u.array == array('d', len(u.array)*[0]):
-        return Vector(len(u.array),array('d', len(u.array)*[0]))
-    return u.scalar(v.inner(u) / u.inner(v))
+    return v.scalar(u.inner(v) / v.inner(v))
 
 
 
@@ -74,8 +76,8 @@ def GramSchmidt(vs):
     for i in range(len(vs)):
         tmp = vs[i]
         for j in xs:
-            tmp = tmp.add(proj(j,vs[i]).scalar(-1))
-        xs.append(tmp)
+            tmp = tmp.lincomb((proj(vs[i],j)),1,-1)
+        xs.append(tmp.scalar(1/tmp.norm()))
         
     return xs
                 
