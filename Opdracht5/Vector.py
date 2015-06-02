@@ -24,15 +24,10 @@ class Vector:
     
     def add(self,other):
         w = array('d', [0]*len(self.array))
-        
-        
         for i in range(len(self.array)):
             w[i] = self.array[i] + other.array[i]
-           
-           
         return Vector(len(self.array),w)
 
-            
 
     def scalar(self,alpha):
         w = array('d',[0]*len(self.array))
@@ -44,10 +39,8 @@ class Vector:
         
     
     def lincomb(self,other,alpha,beta):
-        
         a = self.scalar(alpha)
         b = other.scalar(beta)
-        
         return a.add(b)
         
     
