@@ -59,18 +59,18 @@ class Vector:
         
         
 def proj(u,v):
-    return v.scalar(u.inner(v) / v.inner(v))
+    return u.scalar(v.inner(u) / u.inner(u))
 
 def idioamaticGramSchmidt(vs):
     ws = []
     for v in vs:
         u = v
         for w in ws:
-            u = u.incomb(proj(v,w),1,-1)
+            u = u.lincomb(proj(v,w),1,-1)
             ws.append(u.scalar(1/u.norm()))
 
 
-def GramSchmidt(vs):
+def old_GramSchmidt(vs):
     xs = []
     for i in range(len(vs)):
         tmp = vs[i]
@@ -80,3 +80,13 @@ def GramSchmidt(vs):
         
     return xs
                 
+
+
+def GrammSchmidt(v):
+    for i in range(len(v)):
+        v[i] = v[i].scalar(1/v[i].norm())
+        
+        for j in range(i+1,len(v)):
+            v[j] = v[j].lincomb(proj(v[i],v[j]),1,-1)
+        
+    return v
