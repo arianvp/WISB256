@@ -75,7 +75,7 @@ def idioamaticGramSchmidt(vs):
         u = v
         for w in ws:
             u = u.incomb(proj(v,w),1,-1)
-            ws.append(u.scalar(1/u.norm())
+            ws.append(u.scalar(1/u.norm()))
 
 
 def GramSchmidt(vs):
