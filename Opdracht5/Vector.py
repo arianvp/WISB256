@@ -16,10 +16,9 @@ class Vector:
         # TODO: write code...
     
     def __str__(self):
-        res = ''
-        for i in self.array:
-            res += str(i) + '\n'
-        return res
+        strs = [str(i) for i in self.array]
+        return '\n'.join(strs)
+        
         
     
     def add(self,other):
